@@ -22,7 +22,7 @@ def mostrar_inventario():
         for nombre, informacion in inventario.items():
             print(f'Producto: {nombre} | Cantidad: {informacion["cantidad"]} | Precio: ${informacion["precio"]}')
 
-# Función principal para interactuar con el usuario
+
 def main():
     while True:
         print('\n--- Sistema de Inventario ---')
