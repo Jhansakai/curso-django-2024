@@ -1,0 +1,30 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+<!-- Containers -->
+
+<div class="container-fluid p-5 bg-secondary text-white text-center">
+    <h1>Pagina de Clientes</h1>
+    <p>Vamos a visualizar {{ document_number }} los clientes registrados</p> 
+</div>
+
+<!-- Cards -->
+<div class="container mt-5">
+  <div class="row">
+    {% for cliente in clientes %}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Cliente: {{cliente.first_name}} {{cliente.last_name}}</h4>
+                    <p class="card-text">Numero de documento: {{cliente.document_number}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,36 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid p-5 bg-secondary text-white text-center">
+  <h1>Pagina de Carrito</h1>
+  <p>Vamos a visualizar {{ numero_carritos }} los carritos registrados</p> 
+</div>
+<div class="container mt-3">
+  <h2>Basic Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID carrito</th>
+        <th>Nombre del carrito</th>
+        <th>Propietario</th>
+        <th>cantidad de productos</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for carrito in carritos %}
+        <tr>
+          <td>  <a href="/get_carritos/{{carrito.id}}">{{ carrito.id }}</a> </td>
+          <td> {{ carrito.name }} </td>
+          <td> {{ carrito.person }}</td>
+          <td> {{ carrito.productos.all |length  }}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+

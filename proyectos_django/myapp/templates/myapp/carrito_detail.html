@@ -1,0 +1,35 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid p-5 bg-secondary text-white text-center">
+  <h1>Pagina de  detalle del Carrito</h1>
+  <p>Vamos a visualizar {{ numero_productos }} los productos registrados en este carrito</p> 
+  <p>Nombre: {{ carrito.name }}</p> 
+  <p>Cliente: {{ carrito.person }}</p> 
+
+</div>
+<div class="container mt-3">
+  <h2> Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre del producto</th>
+        <th>Marca</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+        <tr>
+          <td> {{ producto.product_name }} </td>
+          <td> {{ producto.brand }}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,24 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid p-5 bg-secondary text-white text-center">
+    <h1>Pagina de Productos</h1>
+    <p>vamos a visualizar {{ numero_productos }} productos registrados en la base de datos</p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    {% for producto in productos %}
+        <div class="col-sm-4">
+            <h3>{{producto.product_name}}</h3>
+            <p>{{producto.description}}</p>
+            <p>{{producto.sell_price}}</p>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+
